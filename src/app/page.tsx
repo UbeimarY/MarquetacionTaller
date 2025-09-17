@@ -1,98 +1,119 @@
-export default function Page() {
+export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#f58a06]">
-      <div className="relative w-[1100px] h-[260px] rounded-xl shadow-2xl bg-white flex">
-        <div className="absolute -top-3 left-[246px] w-7 h-7 bg-[#f58a06] rounded-full"></div>
-        <div className="absolute -bottom-3 left-[246px] w-7 h-7 bg-[#f58a06] rounded-full"></div>
+    <div className="min-h-screen bg-orange-500 flex items-center justify-center p-4">
+      <div className="max-w-2xl w-full">
+        {/* Contenedor principal del boarding pass */}
+        <div className="relative">
+          {/* Recorte semicircular superior */}
+          <div className="absolute top-0 left-20 w-6 h-3 bg-orange-500 rounded-b-full z-10"></div>
 
-        <div className="w-[260px] flex flex-col items-center justify-start py-8 px-8">
-          <img
-            src="/qr.png"
-            alt="QR Code"
-            className="mt-6 w-[160px] h-[160px] object-cover shadow-sm"
-          />
-        </div>
+          {/* Recorte semicircular inferior */}
+          <div className="absolute bottom-0 left-20 w-6 h-3 bg-orange-500 rounded-t-full z-10"></div>
 
-        <div className="h-full flex items-stretch">
-          <div className="w-[1px] border-r-2 border-dashed border-gray-200" />
-        </div>
+          {/* Sección izquierda - QR y detalles principales */}
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex relative">
+            {/* Sección izquierda - QR y detalles principales */}
+            <div className="flex-1 p-6">
+              <div className="flex gap-6">
+                {/* QR Code */}
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
+                    <img
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=BOM-AMS-NIKITA-SHARMA-4A"
+                      alt="QR Code"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
 
-        <div className="flex-1 p-8 pr-[96px] flex flex-col justify-between relative">
-          <div className="flex flex-row items-start justify-between">
-            <div className="flex flex-col">
-              <span className="text-sm text-gray-500">Mumbai, India</span>
-              <span className="text-[72px] font-extrabold text-gray-200 leading-none">BOM</span>
-              <div className="mt-1 text-xs text-gray-500">
-                <div>Wed, July 27<sup>th</sup></div>
-                <div>1:00 AM</div>
+                {/* Información de vuelo */}
+                <div className="flex-1">
+                  {/* Ciudades y códigos */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <div className="text-gray-500 text-sm">Mumbai,</div>
+                      <div className="text-gray-500 text-sm">India</div>
+                      <div className="text-3xl font-bold text-gray-900">BOM</div>
+                      <div className="text-gray-500 text-sm">1:50 AM</div>
+                    </div>
+
+                    {/* Icono de avión con líneas punteadas */}
+                    <div className="flex-1 flex items-center justify-center relative">
+                      <div className="absolute left-0 right-0 flex items-center">
+                        {/* Líneas punteadas hacia la izquierda */}
+                        <div className="flex-1 border-t-2 border-dotted border-gray-300"></div>
+
+                        {/* Líneas punteadas hacia la derecha - más cortas */}
+                        <div className="flex-1 border-t-2 border-dotted border-gray-300 mr-8"></div>
+                      </div>
+                      <div className="ml-12 mr-2 text-gray-600">
+                        <svg className="w-5 h-5 rotate-90" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="text-right">
+                      <div className="text-gray-500 text-sm">Amsterdam,</div>
+                      <div className="text-gray-500 text-sm">Netherlands</div>
+                      <div className="text-3xl font-bold text-gray-900">AMS</div>
+                      <div className="text-gray-500 text-sm">8:30 AM</div>
+                    </div>
+                  </div>
+
+                  {/* Línea punteada */}
+                  <div className="border-t border-dashed border-gray-300 my-4"></div>
+
+                  {/* Información del pasajero y vuelo */}
+                  <div className="flex justify-between text-sm">
+                    <div>
+                      <div className="text-gray-500">Passenger</div>
+                      <div className="font-semibold text-gray-900">Nikita Sharma</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-500">Seat</div>
+                      <div className="font-semibold text-gray-900">4A</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-500">Terminal</div>
+                      <div className="font-semibold text-gray-900">D</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-500">Gate</div>
+                      <div className="font-semibold text-gray-900">32</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-500">Boarding</div>
+                      <div className="font-semibold text-gray-900">12:40 PM</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="flex-1 flex items-center justify-center">
-              <div className="w-[300px] border-t border-gray-200 relative">
-                <span className="absolute left-1/2 -translate-x-1/2 -top-3 text-black text-lg">✈</span>
+            {/* Sección derecha - Aerolínea (MODIFICADA) */}
+            <div className="w-24 bg-gray-800 flex flex-col justify-between text-white relative">
+              <div className="flex justify-center pt-8">
+                <div className="transform -rotate-90 whitespace-nowrap">
+                  <div className="text-[10px] font-semibold">Boarding Pass</div>
+                </div>
               </div>
-            </div>
 
-            <div className="flex flex-col items-end">
-              <span className="text-sm text-gray-500">Amsterdam, Netherlands</span>
-              <span className="text-[72px] font-extrabold text-gray-200 leading-none">AMS</span>
-              <div className="mt-1 text-xs text-gray-500 text-right">
-                <div>Thu, July 27<sup>th</sup></div>
-                <div>8:30 AM</div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span className="text-gray-800 font-bold text-xs">J</span>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div className="flex flex-row items-end justify-between mt-6">
-            <div className="flex flex-col">
-              <span className="text-xs text-gray-400">Passenger</span>
-              <span className="font-semibold text-gray-700">Nikita Sharma</span>
-            </div>
-
-            <div className="flex flex-col">
-              <span className="text-xs text-gray-400">Seat</span>
-              <span className="font-semibold text-gray-700">4A</span>
-            </div>
-
-            <div className="flex flex-col">
-              <span className="text-xs text-gray-400">Terminal</span>
-              <span className="font-semibold text-gray-700">D</span>
-            </div>
-
-            <div className="flex flex-col">
-              <span className="text-xs text-gray-400">Gate</span>
-              <span className="font-semibold text-gray-700">32</span>
-            </div>
-
-            <div className="flex flex-col">
-              <span className="text-xs text-gray-400">Boarding</span>
-              <span className="font-semibold text-gray-700">12:40 PM</span>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="absolute right-0 top-0 h-full w-16 bg-[#18357f] rounded-tr-xl rounded-br-xl flex items-center justify-center z-20"
-          aria-hidden="true"
-        >
-          <div className="flex flex-col items-center justify-center h-full gap-3 px-1">
-            <div
-              className="[writing-mode:vertical-rl] [text-orientation:mixed] text-white text-xs tracking-wider leading-snug"
-              style={{ WebkitTextOrientation: 'mixed' }}
-            >
-              Boarding Pass
-            </div>
-
-            <div className="w-2 h-2 bg-[#f3c21d] rounded-full" />
-
-            <div className="flex flex-col items-center mt-1">
-              <div className="text-white font-extrabold text-[12px] leading-none">JET</div>
-              <div className="text-white font-extrabold text-[12px] leading-none">AIRWAYS</div>
+              <div className="flex flex-col items-center pb-8">
+                <div className="transform -rotate-90 text-[10px] font-semibold tracking-wide whitespace-nowrap">
+                  JET AIRWAYS
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-  );
+    </div>
+  )
 }
