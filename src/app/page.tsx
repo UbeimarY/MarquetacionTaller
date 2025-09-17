@@ -10,10 +10,10 @@ export default function Home() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex relative">
             <div className="flex-1 p-6">
               <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
+                <div className="flex-shrink-0 flex items-center">
+                  <div className="w-32 h-32 bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
                     <img
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=BOM-AMS-NIKITA-SHARMA-4A"
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=128x128&data=BOM-AMS-NIKITA-SHARMA-4A"
                       alt="QR Code"
                       className="w-full h-full object-cover"
                     />
@@ -33,6 +33,7 @@ export default function Home() {
                     <div className="flex-1 flex items-center justify-center relative">
                       <div className="absolute left-0 right-0 flex items-center">
                         <div className="flex-1 border-t-2 border-dotted border-gray-300"></div>
+
                         <div className="flex-1 border-t-2 border-dotted border-gray-300 mr-8"></div>
                       </div>
                       <div className="ml-12 mr-2 text-gray-600">
