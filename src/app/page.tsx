@@ -61,7 +61,6 @@ export default function Home() {
 
                   <div className="border-t border-dashed border-gray-300 my-4"></div>
 
-
                   <div className="flex justify-between text-sm">
                     <div>
                       <div className="text-gray-500">Passenger</div>
