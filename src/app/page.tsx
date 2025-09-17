@@ -2,20 +2,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-orange-500 flex items-center justify-center p-4">
       <div className="max-w-2xl w-full">
-        {/* Contenedor principal del boarding pass */}
+
         <div className="relative">
-          {/* Recorte semicircular superior */}
           <div className="absolute top-0 left-20 w-6 h-3 bg-orange-500 rounded-b-full z-10"></div>
 
-          {/* Recorte semicircular inferior */}
           <div className="absolute bottom-0 left-20 w-6 h-3 bg-orange-500 rounded-t-full z-10"></div>
 
-          {/* Sección izquierda - QR y detalles principales */}
+
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex relative">
-            {/* Sección izquierda - QR y detalles principales */}
+
             <div className="flex-1 p-6">
               <div className="flex gap-6">
-                {/* QR Code */}
+
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
                     <img
@@ -26,9 +24,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Información de vuelo */}
+
                 <div className="flex-1">
-                  {/* Ciudades y códigos */}
+
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <div className="text-gray-500 text-sm">Mumbai,</div>
@@ -37,13 +35,12 @@ export default function Home() {
                       <div className="text-gray-500 text-sm">1:50 AM</div>
                     </div>
 
-                    {/* Icono de avión con líneas punteadas */}
+
                     <div className="flex-1 flex items-center justify-center relative">
                       <div className="absolute left-0 right-0 flex items-center">
-                        {/* Líneas punteadas hacia la izquierda */}
+
                         <div className="flex-1 border-t-2 border-dotted border-gray-300"></div>
 
-                        {/* Líneas punteadas hacia la derecha - más cortas */}
                         <div className="flex-1 border-t-2 border-dotted border-gray-300 mr-8"></div>
                       </div>
                       <div className="ml-12 mr-2 text-gray-600">
@@ -61,10 +58,10 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Línea punteada */}
+
                   <div className="border-t border-dashed border-gray-300 my-4"></div>
 
-                  {/* Información del pasajero y vuelo */}
+
                   <div className="flex justify-between text-sm">
                     <div>
                       <div className="text-gray-500">Passenger</div>
@@ -91,7 +88,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Sección derecha - Aerolínea (MODIFICADA) */}
+
             <div className="w-24 bg-gray-800 flex flex-col justify-between text-white relative">
               <div className="flex justify-center pt-8">
                 <div className="transform -rotate-90 whitespace-nowrap">
